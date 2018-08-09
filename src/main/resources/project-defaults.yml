@@ -1,0 +1,8 @@
+swarm:
+  datasources:
+    data-sources:
+      foodportaldb:
+        driver-name: mysql
+        connection-url: jdbc:mysql://localhost:3306/FOODPORTALDB
+        user-name: root
+        password: root
