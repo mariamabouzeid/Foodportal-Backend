@@ -3,6 +3,7 @@ package main.Boundary;
 import main.Entity.*;
 import main.REST.models.OrderModel;
 
+import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Stateless
+@Stateful
 public class PortalRepository {
 
     @PersistenceContext
