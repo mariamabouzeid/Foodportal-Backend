@@ -26,6 +26,17 @@ public class User implements Serializable {
 
     @Column(name = "ADDRESS1")
     private String address1;
+    @Column(name = "ADDRESS2")
+
+    private String address2;
+    @Column(name = "ROLE")
+    private String role;
+    @OneToMany
+    @JoinColumn(name = "USER_ID")
+    private List<Complaint> complaints;
+    @OneToMany
+    @JoinColumn(name = "USER_ID")
+    private List<Order> orders;
 
     public String getRole() {
         return role;
@@ -35,24 +46,13 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    @Column(name = "ADDRESS2")
-
-    private String address2;
-
-    @Column(name = "ROLE")
-    private String role;
-
     public Long getId() {
         return id;
     }
 
-    @OneToMany
-    @JoinColumn(name = "USER_ID")
-    private List<Complaint> complaints;
-
-    @OneToMany
-    @JoinColumn(name = "USER_ID")
-    private List<Order> orders;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -90,8 +90,8 @@ public class User implements Serializable {
         return address2;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAddress2(String address2) {
+        this.address2 = address2;
     }
 
     public List<Complaint> getComplaints() {
@@ -108,9 +108,5 @@ public class User implements Serializable {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
-    }
-
-    public void setAddress2(String address2) {
-        this.address2 = address2;
     }
 }

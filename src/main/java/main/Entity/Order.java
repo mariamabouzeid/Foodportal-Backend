@@ -20,6 +20,7 @@ public class Order implements Serializable {
     @OneToMany
     @JoinColumn(name = "ORDER_ID")
     private List<OrderItems> orderItems;
+
     @Column(name = "USER_ID")
     private Long userId;
 
