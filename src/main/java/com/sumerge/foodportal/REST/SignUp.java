@@ -1,9 +1,8 @@
-package main.REST;
+package com.sumerge.foodportal.REST;
 
-import main.Boundary.PortalRepository;
-import main.Entity.User;
+import com.sumerge.foodportal.Boundary.PortalRepository;
+import com.sumerge.foodportal.Entity.User;
 
-import javax.annotation.security.PermitAll;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.Consumes;
@@ -32,7 +31,7 @@ public class SignUp {
     @Path("/addUser")
     public Response addNewUser(User user) {
         try {
-            portal.AddNewUser(user);
+            portal.addNewUser(user);
             return Response.created(new URI("")).build();
         } catch (Exception e) {
             LOGGER.log(SEVERE, e.getMessage(), e);

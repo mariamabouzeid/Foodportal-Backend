@@ -1,4 +1,4 @@
-package main.REST;
+package com.sumerge.foodportal.REST;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

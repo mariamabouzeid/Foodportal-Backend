@@ -1,26 +1,19 @@
-package main.REST;
+package com.sumerge.foodportal.REST;
 
-//import main.Boundary.PortalRepository;
+//import PortalRepository;
 
-import main.Boundary.PortalRepository;
-import main.Entity.Complaint;
-import main.Entity.OrderItems;
-import main.Entity.User;
-import main.REST.models.OrderModel;
+import com.sumerge.foodportal.Boundary.PortalRepository;
+import com.sumerge.foodportal.Entity.Complaint;
+import com.sumerge.foodportal.REST.Models.OrderModel;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
-import java.net.HttpCookie;
 import java.net.URI;
-import java.util.List;
 import java.util.logging.Logger;
 
 import static java.util.logging.Level.SEVERE;
@@ -38,6 +31,9 @@ public class PortalResources {
     @EJB
     private PortalRepository portal;
 
+    @Context
+    SecurityContext securityContext;
+
     @GET
     @Path("/menu")
     public Response viewMenuItems() {
@@ -52,9 +48,6 @@ public class PortalResources {
                     build();
         }
     }
-
-    @Context
-    SecurityContext securityContext;
 
     @GET
     @Path("/user")
@@ -75,7 +68,7 @@ public class PortalResources {
     @Path("/complaints")
     public Response addNewComplaint(Complaint complaint) {
         try {
-            portal.AddComplaint(complaint);
+            portal.addComplaint(complaint);
             return Response.created(new URI("")).build();
         } catch (Exception e) {
             LOGGER.log(SEVERE, e.getMessage(), e);

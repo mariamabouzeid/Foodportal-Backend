@@ -1,17 +1,14 @@
-package main.Boundary;
+package com.sumerge.foodportal.Boundary;
 
-import main.Entity.*;
-import main.REST.models.OrderModel;
+import com.sumerge.foodportal.Entity.*;
+import com.sumerge.foodportal.REST.Models.OrderModel;
+import com.sumerge.foodportal.Entity.*;
 
 import javax.ejb.Stateful;
-import javax.ejb.Stateless;
-import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.Produces;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Stateful
 public class PortalRepository {
@@ -19,7 +16,7 @@ public class PortalRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public void AddNewUser(User user){
+    public void addNewUser(User user){
         user.setRole("admin");
         em.persist(user);
 
@@ -32,7 +29,7 @@ public class PortalRepository {
         return u.getId();
     }
 
-    public void AddComplaint(Complaint complaint){
+    public void addComplaint(Complaint complaint){
 
         em.persist(complaint);
 

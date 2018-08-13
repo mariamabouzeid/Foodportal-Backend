@@ -1,6 +1,4 @@
-package main.Entity;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package com.sumerge.foodportal.Entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

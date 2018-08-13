@@ -1,4 +1,4 @@
-package main.Entity;
+package com.sumerge.foodportal.Entity;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
