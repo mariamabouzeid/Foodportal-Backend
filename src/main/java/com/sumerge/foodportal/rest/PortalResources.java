@@ -1,10 +1,10 @@
-package com.sumerge.foodportal.REST;
+package com.sumerge.foodportal.rest;
 
 //import PortalRepository;
 
-import com.sumerge.foodportal.Boundary.PortalRepository;
-import com.sumerge.foodportal.Entity.Complaint;
-import com.sumerge.foodportal.REST.Models.OrderModel;
+import com.sumerge.foodportal.boundary.PortalRepository;
+import com.sumerge.foodportal.entity.Complaint;
+import com.sumerge.foodportal.rest.model.OrderModel;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJB;

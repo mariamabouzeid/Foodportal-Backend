@@ -1,4 +1,4 @@
-package com.sumerge.foodportal.REST.Filter;
+package com.sumerge.foodportal.rest.filter;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;

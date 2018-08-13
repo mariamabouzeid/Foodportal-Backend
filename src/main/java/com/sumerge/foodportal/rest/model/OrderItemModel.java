@@ -1,4 +1,4 @@
-package com.sumerge.foodportal.REST.Models;
+package com.sumerge.foodportal.rest.model;
 
 public class OrderItemModel {
 

@@ -1,7 +1,7 @@
-package com.sumerge.foodportal.REST;
+package com.sumerge.foodportal.rest;
 
-import com.sumerge.foodportal.Boundary.PortalRepository;
-import com.sumerge.foodportal.Entity.User;
+import com.sumerge.foodportal.boundary.PortalRepository;
+import com.sumerge.foodportal.entity.User;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;

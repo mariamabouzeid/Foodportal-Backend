@@ -4,13 +4,13 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="MyDS" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>com.sumerge.foodportal.Entity.OrderItemsId</class>
-        <class>com.sumerge.foodportal.Entity.OrderItems</class>
-        <class>com.sumerge.foodportal.Entity.Order</class>
-        <class>com.sumerge.foodportal.Entity.Item</class>
-        <class>com.sumerge.foodportal.Entity.Complaint</class>
-        <class>com.sumerge.foodportal.Entity.Size</class>
-        <class>com.sumerge.foodportal.Entity.User</class>
+        <class>com.sumerge.foodportal.entity.OrderItemsId</class>
+        <class>com.sumerge.foodportal.entity.OrderItems</class>
+        <class>com.sumerge.foodportal.entity.Order</class>
+        <class>com.sumerge.foodportal.entity.Item</class>
+        <class>com.sumerge.foodportal.entity.Complaint</class>
+        <class>com.sumerge.foodportal.entity.Size</class>
+        <class>com.sumerge.foodportal.entity.User</class>
 
         <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
         <validation-mode>NONE</validation-mode>

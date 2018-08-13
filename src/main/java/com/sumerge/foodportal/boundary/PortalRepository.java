@@ -1,8 +1,7 @@
-package com.sumerge.foodportal.Boundary;
+package com.sumerge.foodportal.boundary;
 
-import com.sumerge.foodportal.Entity.*;
-import com.sumerge.foodportal.REST.Models.OrderModel;
-import com.sumerge.foodportal.Entity.*;
+import com.sumerge.foodportal.entity.*;
+import com.sumerge.foodportal.rest.model.OrderModel;
 
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;

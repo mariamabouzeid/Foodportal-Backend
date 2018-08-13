@@ -1,4 +1,4 @@
-package com.sumerge.foodportal.Entity;
+package com.sumerge.foodportal.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
