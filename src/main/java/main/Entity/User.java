@@ -27,14 +27,27 @@ public class User implements Serializable {
     @Column(name = "ADDRESS1")
     private String address1;
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Column(name = "ADDRESS2")
+
     private String address2;
+
+    @Column(name = "ROLE")
+    private String role;
 
     public Long getId() {
         return id;
     }
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany
+    @JoinColumn(name = "USER_ID")
     private List<Complaint> complaints;
 
     @OneToMany

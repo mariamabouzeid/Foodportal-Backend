@@ -1,8 +1,30 @@
 swarm:
+  deployment:
+    java-ee-base.war:
+      web:
+        login-config:
+          auth-method: BASIC
+          security-domain: my-domain
+        security-constraints:
+          - url-pattern: /foodportal/secured/*
+            methods: [GET, POST]
+            roles: [admin]
+  security:
+    security-domains:
+      my-domain:
+        classic-authentication:
+          login-modules:
+            Database:
+              code: Database
+              flag: required
+              module-options:
+                dsJndiName: java:jboss/datasources/MyDS
+                principalsQuery: SELECT PASSWORD FROM USER WHERE USER_NAME=?
+                rolesQuery: SELECT ROLE, 'Roles' FROM USER WHERE USER_NAME=?
   datasources:
-    data-sources:
-      foodportaldb:
-        driver-name: mysql
-        connection-url: jdbc:mysql://localhost:3306/FOODPORTALDB
-        user-name: root
-        password: root
+      data-sources:
+        MyDS:
+          driver-name: mysql
+          connection-url: jdbc:mysql://localhost:3306/FOODPORTALDB
+          user-name: root
+          password: root

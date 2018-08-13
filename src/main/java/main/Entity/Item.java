@@ -32,7 +32,7 @@ public class Item implements Serializable {
     private List<Size> sizes;
 
     @Column(name = "IMG")
-    private byte[] img;
+    private String img;
 
     public String getName() {
         return name;
@@ -74,11 +74,11 @@ public class Item implements Serializable {
         this.description = description;
     }
 
-    public byte[] getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(byte[] img) {
+    public void setImg(String img) {
         this.img = img;
     }
 }

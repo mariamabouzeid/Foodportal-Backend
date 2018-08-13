@@ -19,9 +19,16 @@ public class PortalRepository {
     private EntityManager em;
 
     public void AddNewUser(User user){
-
+        user.setRole("admin");
         em.persist(user);
 
+    }
+
+    public Long getUserId(String username){
+        User u = em.createQuery("select u from User u where u.userName = :um", User.class)
+                .setParameter("um", username).getSingleResult();
+        System.out.println(u.getId());
+        return u.getId();
     }
 
     public void AddComplaint(Complaint complaint){
